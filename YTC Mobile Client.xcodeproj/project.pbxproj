@@ -12,6 +12,7 @@
 		181BDDF11FE55FBF00CF83A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181BDDEF1FE55FBF00CF83A6 /* Main.storyboard */; };
 		181BDDF31FE55FBF00CF83A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 181BDDF21FE55FBF00CF83A6 /* Assets.xcassets */; };
 		181BDDF61FE55FBF00CF83A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181BDDF41FE55FBF00CF83A6 /* LaunchScreen.storyboard */; };
+		C8C529536F23C4DE283ACA25 /* Pods_YTC_Mobile_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 386FB762E44CB4BFB943BE44 /* Pods_YTC_Mobile_Client.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		181BDDF21FE55FBF00CF83A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		181BDDF51FE55FBF00CF83A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		181BDDF71FE55FBF00CF83A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		386FB762E44CB4BFB943BE44 /* Pods_YTC_Mobile_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YTC_Mobile_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DF682BB143AF11C6850458F /* Pods-YTC Mobile Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTC Mobile Client.release.xcconfig"; path = "Pods/Target Support Files/Pods-YTC Mobile Client/Pods-YTC Mobile Client.release.xcconfig"; sourceTree = "<group>"; };
+		ABA92063CD1DC1FB8D2929B1 /* Pods-YTC Mobile Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTC Mobile Client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YTC Mobile Client/Pods-YTC Mobile Client.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8C529536F23C4DE283ACA25 /* Pods_YTC_Mobile_Client.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				181BDDEA1FE55FBF00CF83A6 /* YTC Mobile Client */,
 				181BDDE91FE55FBF00CF83A6 /* Products */,
+				724476EA0F4457F12694790B /* Pods */,
+				B6FA1BAEC37FEE4672E491E2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +87,23 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		724476EA0F4457F12694790B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ABA92063CD1DC1FB8D2929B1 /* Pods-YTC Mobile Client.debug.xcconfig */,
+				3DF682BB143AF11C6850458F /* Pods-YTC Mobile Client.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B6FA1BAEC37FEE4672E491E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				386FB762E44CB4BFB943BE44 /* Pods_YTC_Mobile_Client.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -87,9 +111,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 181BDDFA1FE55FBF00CF83A6 /* Build configuration list for PBXNativeTarget "YTC Mobile Client" */;
 			buildPhases = (
+				04339C6EAB428C1589621F87 /* [CP] Check Pods Manifest.lock */,
 				181BDDE41FE55FBF00CF83A6 /* Sources */,
 				181BDDE51FE55FBF00CF83A6 /* Frameworks */,
 				181BDDE61FE55FBF00CF83A6 /* Resources */,
+				F3F567C4B2E4AFB1AE6CA7C0 /* [CP] Embed Pods Frameworks */,
+				319F8FA7C005AC64537E5E37 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -146,6 +173,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04339C6EAB428C1589621F87 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		319F8FA7C005AC64537E5E37 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YTC Mobile Client/Pods-YTC Mobile Client-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3F567C4B2E4AFB1AE6CA7C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YTC Mobile Client/Pods-YTC Mobile Client-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		181BDDE41FE55FBF00CF83A6 /* Sources */ = {
@@ -288,6 +363,7 @@
 		};
 		181BDDFB1FE55FBF00CF83A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABA92063CD1DC1FB8D2929B1 /* Pods-YTC Mobile Client.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -304,6 +380,7 @@
 		};
 		181BDDFC1FE55FBF00CF83A6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DF682BB143AF11C6850458F /* Pods-YTC Mobile Client.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
