@@ -10,35 +10,25 @@ import Foundation
 import Moya
 
 enum MyService {
-    case listMovies(page: Int)
-    case movieDetails(movieId: Int)
+    case listMovies(page: Int, searchText: String)
 }
 extension MyService: TargetType {
     var baseURL: URL { return URL(string: "https://yts.am/api/v2")! }
     var path: String {
-        switch self {
-        case .listMovies:
-            return "/list_movies.json"
-        case .movieDetails:
-            return "/movie_details.json"
-        }
+        return "/list_movies.json"
     }
     var method: Moya.Method {
         return .get
     }
     var task: Task {
         switch self {
-        case let .listMovies(page):
-            return .requestParameters(parameters: ["page": page], encoding: JSONEncoding.default)
-        case let .movieDetails(movieId):
-            return .requestParameters(parameters: ["movie_id": movieId], encoding: JSONEncoding.default)
+        case let .listMovies(page, searchText):
+            return .requestParameters(parameters: ["page": page, "query_term": searchText], encoding: URLEncoding.queryString)
         }
     }
     var sampleData: Data {
         switch self {
         case .listMovies:
-            return "".utf8Encoded
-        case .movieDetails:
             return "".utf8Encoded
         }
     }

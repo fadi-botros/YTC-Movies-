@@ -8,24 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		181B1E2C1FE59EE100AC07FA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 181B1E2B1FE59EE100AC07FA /* Info.plist */; };
-		181B1E2E1FE5E8DF00AC07FA /* MySerice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181B1E2D1FE5E8DF00AC07FA /* MySerice.swift */; };
+		181B1E2E1FE5E8DF00AC07FA /* MyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181B1E2D1FE5E8DF00AC07FA /* MyService.swift */; };
 		181BDDEC1FE55FBF00CF83A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181BDDEB1FE55FBF00CF83A6 /* AppDelegate.swift */; };
 		181BDDEE1FE55FBF00CF83A6 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181BDDED1FE55FBF00CF83A6 /* MoviesViewController.swift */; };
 		181BDDF11FE55FBF00CF83A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181BDDEF1FE55FBF00CF83A6 /* Main.storyboard */; };
 		181BDDF31FE55FBF00CF83A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 181BDDF21FE55FBF00CF83A6 /* Assets.xcassets */; };
 		181BDDF61FE55FBF00CF83A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181BDDF41FE55FBF00CF83A6 /* LaunchScreen.storyboard */; };
+		181EA1081FE6B11900D7C814 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181EA1071FE6B11900D7C814 /* Movie.swift */; };
+		181EA10A1FE6B29C00D7C814 /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181EA1091FE6B29C00D7C814 /* MoviesViewModel.swift */; };
+		181EA10C1FE6BAAD00D7C814 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181EA10B1FE6BAAD00D7C814 /* MovieTableViewCell.swift */; };
+		181EA10F1FE73C6300D7C814 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181EA10E1FE73C6300D7C814 /* MovieDetailsViewController.swift */; };
 		C8C529536F23C4DE283ACA25 /* Pods_YTC_Mobile_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 386FB762E44CB4BFB943BE44 /* Pods_YTC_Mobile_Client.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		181B1E2B1FE59EE100AC07FA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../../../Ask-Us/AskUs/Info.plist"; sourceTree = "<group>"; };
-		181B1E2D1FE5E8DF00AC07FA /* MySerice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySerice.swift; sourceTree = "<group>"; };
+		181B1E2D1FE5E8DF00AC07FA /* MyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyService.swift; sourceTree = "<group>"; };
 		181BDDE81FE55FBF00CF83A6 /* YTC Mobile Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YTC Mobile Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		181BDDEB1FE55FBF00CF83A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		181BDDED1FE55FBF00CF83A6 /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 		181BDDF01FE55FBF00CF83A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		181BDDF21FE55FBF00CF83A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		181BDDF51FE55FBF00CF83A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		181EA1071FE6B11900D7C814 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		181EA1091FE6B29C00D7C814 /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
+		181EA10B1FE6BAAD00D7C814 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		181EA10E1FE73C6300D7C814 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		386FB762E44CB4BFB943BE44 /* Pods_YTC_Mobile_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YTC_Mobile_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DF682BB143AF11C6850458F /* Pods-YTC Mobile Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTC Mobile Client.release.xcconfig"; path = "Pods/Target Support Files/Pods-YTC Mobile Client/Pods-YTC Mobile Client.release.xcconfig"; sourceTree = "<group>"; };
 		ABA92063CD1DC1FB8D2929B1 /* Pods-YTC Mobile Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTC Mobile Client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YTC Mobile Client/Pods-YTC Mobile Client.debug.xcconfig"; sourceTree = "<group>"; };
@@ -43,6 +51,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		181BC7FD1FE7D2170049A12B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				181EA1091FE6B29C00D7C814 /* MoviesViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		181BC7FE1FE7D2220049A12B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				181EA1071FE6B11900D7C814 /* Movie.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		181BDDDF1FE55FBF00CF83A6 = {
 			isa = PBXGroup;
 			children = (
@@ -64,8 +88,11 @@
 		181BDDEA1FE55FBF00CF83A6 /* YTC Mobile Client */ = {
 			isa = PBXGroup;
 			children = (
-				181BDDEB1FE55FBF00CF83A6 /* AppDelegate.swift */,
 				181BDDFE1FE5602200CF83A6 /* ViewControllers */,
+				181BC7FE1FE7D2220049A12B /* Model */,
+				181BC7FD1FE7D2170049A12B /* ViewModels */,
+				181EA10B1FE6BAAD00D7C814 /* MovieTableViewCell.swift */,
+				181B1E2D1FE5E8DF00AC07FA /* MyService.swift */,
 				181BDDFD1FE5601900CF83A6 /* Resources */,
 			);
 			path = "YTC Mobile Client";
@@ -74,6 +101,7 @@
 		181BDDFD1FE5601900CF83A6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				181BDDEB1FE55FBF00CF83A6 /* AppDelegate.swift */,
 				181BDDEF1FE55FBF00CF83A6 /* Main.storyboard */,
 				181BDDF21FE55FBF00CF83A6 /* Assets.xcassets */,
 				181B1E2B1FE59EE100AC07FA /* Info.plist */,
@@ -86,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				181BDDED1FE55FBF00CF83A6 /* MoviesViewController.swift */,
-				181B1E2D1FE5E8DF00AC07FA /* MySerice.swift */,
+				181EA10E1FE73C6300D7C814 /* MovieDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -233,8 +261,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				181BDDEE1FE55FBF00CF83A6 /* MoviesViewController.swift in Sources */,
-				181B1E2E1FE5E8DF00AC07FA /* MySerice.swift in Sources */,
+				181B1E2E1FE5E8DF00AC07FA /* MyService.swift in Sources */,
+				181EA10C1FE6BAAD00D7C814 /* MovieTableViewCell.swift in Sources */,
+				181EA10F1FE73C6300D7C814 /* MovieDetailsViewController.swift in Sources */,
+				181EA1081FE6B11900D7C814 /* Movie.swift in Sources */,
 				181BDDEC1FE55FBF00CF83A6 /* AppDelegate.swift in Sources */,
+				181EA10A1FE6B29C00D7C814 /* MoviesViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,5 +9,7 @@ target 'YTC Mobile Client' do
 
 pod 'Moya'
 pod 'Kingfisher'
+pod 'SwiftyJSON'
+pod 'MBProgressHUD'
 
 end

@@ -7,90 +7,117 @@
 //
 
 import UIKit
-import Moya
+import MBProgressHUD
 
 class MoviesViewController: UIViewController {
 
-    fileprivate let itemsPerRow: CGFloat = 2
-    fileprivate let sectionInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-
-    let provider = MoyaProvider<MyService>()
+    @IBOutlet weak var moviesTableView: UITableView!
+    
+    //Mark: Variables to be used in current Viewcontroller
+    //includes ViewModel, current page and searchText
+    var moviesViewModel: MoviesViewModel = MoviesViewModel()
+    
+    var page = 1
+    var searchText = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        provider.request(.listMovies(page: 1)) { result in
-           print("hello")
-        }
+     
+     //Show a loader to indicate the loading is on
+     MBProgressHUD.showAdded(to: self.view, animated: true)
+     
+     //Request the movie list on when view is loaded
+     moviesViewModel.requestMoviesList(page: page, searchText: "")
+     moviesViewModel.delegate = self
+     
+     configureSearch()
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    ///Passing current movie details to the MovieDetailsViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! MovieDetailsViewController
+        let row = (sender as? IndexPath)?.row
+        let selectedMovie = moviesViewModel.MoviesArray[row!]
+        destination.movie = selectedMovie
+        
     }
-
-
+    
+    
 }
-
-extension MoviesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-   
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+extension MoviesViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return moviesViewModel.numberOfRowsInSection()
+        
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCell", for: indexPath)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        /* This will load more movies when current row equals the of movies array
+         includes both search and normal listing of movies.
+        */
+        if indexPath.row == moviesViewModel.MoviesArray.count - 1 {
+            page += 1
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+            print(page)
+            moviesViewModel.requestMoviesList(page: page, searchText: searchText)
+
+        }
+        
+        //includes cell indentifying and setting it's data.
+        let cell = moviesTableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieTableViewCell
+        let movie = moviesViewModel.MoviesArray[indexPath.row]
+        cell.setMovieData(movie:movie)
         return cell
     }
     
-  
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showDetails", sender: indexPath)
+    }
     
 }
 
-extension MoviesViewController: UICollectionViewDelegateFlowLayout {
+extension MoviesViewController: JustReloading {
+  
+    //Delegate aimed to reload tableview after a request is done
+    //reloading is done from my view Model.
+    func JustReloadTable() {
+        moviesTableView.reloadData()
+        MBProgressHUD.hide(for: self.view, animated: true)
+     }
     
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //2
-        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-        let availableWidth = view.frame.width - paddingSpace
-        let widthPerItem = availableWidth / itemsPerRow
-        
-        return CGSize(width: widthPerItem, height: widthPerItem)
+    func JustHide() {
+        MBProgressHUD.hide(for: self.view, animated: true)
     }
+}
+
+extension MoviesViewController: UISearchBarDelegate {
     
-    //3
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        insetForSectionAt section: Int) -> UIEdgeInsets {
-        return sectionInsets
-    }
-    
-    // 4
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return sectionInsets.left
+    //Adding search bar and configuring it's title
+    private func configureSearch() {
+        let searchBar = UISearchBar()
+        searchBar.placeholder = "Search..."
+        searchBar.delegate = self
+        self.navigationItem.titleView = searchBar
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    //requesting movie list based on searchtext on my search bar
+    //request is intiated once text changed
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        moviesViewModel.MoviesArray.removeAll()
+        moviesViewModel.requestMoviesList(page: page, searchText: searchText)
+        self.searchText = searchText
+        MBProgressHUD.hide(for: self.view, animated: true)
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+    }
     
     
 }
