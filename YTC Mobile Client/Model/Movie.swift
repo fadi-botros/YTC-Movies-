@@ -8,7 +8,9 @@
 
 import Foundation
 
-class Movie: NSObject {
+// No need for NSObject here, you don't use Key-Value Observation, dynamic functions/variables, @objc
+//   so it is better in terms of performance not to use this
+class Movie {
     
     var imgUrl : String!
     var name : String!

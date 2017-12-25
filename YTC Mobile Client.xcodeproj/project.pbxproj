@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		181B1E2C1FE59EE100AC07FA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 181B1E2B1FE59EE100AC07FA /* Info.plist */; };
+		0433AFE41FF14538006087A1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0433AFE31FF14538006087A1 /* Info.plist */; };
 		181B1E2E1FE5E8DF00AC07FA /* MyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181B1E2D1FE5E8DF00AC07FA /* MyService.swift */; };
 		181BDDEC1FE55FBF00CF83A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181BDDEB1FE55FBF00CF83A6 /* AppDelegate.swift */; };
 		181BDDEE1FE55FBF00CF83A6 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181BDDED1FE55FBF00CF83A6 /* MoviesViewController.swift */; };
@@ -15,14 +15,14 @@
 		181BDDF31FE55FBF00CF83A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 181BDDF21FE55FBF00CF83A6 /* Assets.xcassets */; };
 		181BDDF61FE55FBF00CF83A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181BDDF41FE55FBF00CF83A6 /* LaunchScreen.storyboard */; };
 		181EA1081FE6B11900D7C814 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181EA1071FE6B11900D7C814 /* Movie.swift */; };
-		181EA10A1FE6B29C00D7C814 /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181EA1091FE6B29C00D7C814 /* MoviesViewModel.swift */; };
+		181EA10A1FE6B29C00D7C814 /* MoviesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181EA1091FE6B29C00D7C814 /* MoviesPresenter.swift */; };
 		181EA10C1FE6BAAD00D7C814 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181EA10B1FE6BAAD00D7C814 /* MovieTableViewCell.swift */; };
 		181EA10F1FE73C6300D7C814 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181EA10E1FE73C6300D7C814 /* MovieDetailsViewController.swift */; };
 		C8C529536F23C4DE283ACA25 /* Pods_YTC_Mobile_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 386FB762E44CB4BFB943BE44 /* Pods_YTC_Mobile_Client.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		181B1E2B1FE59EE100AC07FA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../../../Ask-Us/AskUs/Info.plist"; sourceTree = "<group>"; };
+		0433AFE31FF14538006087A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		181B1E2D1FE5E8DF00AC07FA /* MyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyService.swift; sourceTree = "<group>"; };
 		181BDDE81FE55FBF00CF83A6 /* YTC Mobile Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YTC Mobile Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		181BDDEB1FE55FBF00CF83A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -31,7 +31,7 @@
 		181BDDF21FE55FBF00CF83A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		181BDDF51FE55FBF00CF83A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		181EA1071FE6B11900D7C814 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
-		181EA1091FE6B29C00D7C814 /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
+		181EA1091FE6B29C00D7C814 /* MoviesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesPresenter.swift; sourceTree = "<group>"; };
 		181EA10B1FE6BAAD00D7C814 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		181EA10E1FE73C6300D7C814 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		386FB762E44CB4BFB943BE44 /* Pods_YTC_Mobile_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YTC_Mobile_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,12 +51,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		181BC7FD1FE7D2170049A12B /* ViewModels */ = {
+		181BC7FD1FE7D2170049A12B /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				181EA1091FE6B29C00D7C814 /* MoviesViewModel.swift */,
+				181EA1091FE6B29C00D7C814 /* MoviesPresenter.swift */,
 			);
-			path = ViewModels;
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		181BC7FE1FE7D2220049A12B /* Model */ = {
@@ -70,6 +70,7 @@
 		181BDDDF1FE55FBF00CF83A6 = {
 			isa = PBXGroup;
 			children = (
+				0433AFE31FF14538006087A1 /* Info.plist */,
 				181BDDEA1FE55FBF00CF83A6 /* YTC Mobile Client */,
 				181BDDE91FE55FBF00CF83A6 /* Products */,
 				724476EA0F4457F12694790B /* Pods */,
@@ -90,7 +91,7 @@
 			children = (
 				181BDDFE1FE5602200CF83A6 /* ViewControllers */,
 				181BC7FE1FE7D2220049A12B /* Model */,
-				181BC7FD1FE7D2170049A12B /* ViewModels */,
+				181BC7FD1FE7D2170049A12B /* Presenter */,
 				181EA10B1FE6BAAD00D7C814 /* MovieTableViewCell.swift */,
 				181B1E2D1FE5E8DF00AC07FA /* MyService.swift */,
 				181BDDFD1FE5601900CF83A6 /* Resources */,
@@ -104,7 +105,6 @@
 				181BDDEB1FE55FBF00CF83A6 /* AppDelegate.swift */,
 				181BDDEF1FE55FBF00CF83A6 /* Main.storyboard */,
 				181BDDF21FE55FBF00CF83A6 /* Assets.xcassets */,
-				181B1E2B1FE59EE100AC07FA /* Info.plist */,
 				181BDDF41FE55FBF00CF83A6 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
@@ -198,7 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				181B1E2C1FE59EE100AC07FA /* Info.plist in Resources */,
+				0433AFE41FF14538006087A1 /* Info.plist in Resources */,
 				181BDDF61FE55FBF00CF83A6 /* LaunchScreen.storyboard in Resources */,
 				181BDDF31FE55FBF00CF83A6 /* Assets.xcassets in Resources */,
 				181BDDF11FE55FBF00CF83A6 /* Main.storyboard in Resources */,
@@ -214,13 +214,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YTC Mobile Client-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		319F8FA7C005AC64537E5E37 /* [CP] Copy Pods Resources */ = {
@@ -244,9 +247,22 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-YTC Mobile Client/Pods-YTC Mobile Client-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -266,7 +282,7 @@
 				181EA10F1FE73C6300D7C814 /* MovieDetailsViewController.swift in Sources */,
 				181EA1081FE6B11900D7C814 /* Movie.swift in Sources */,
 				181BDDEC1FE55FBF00CF83A6 /* AppDelegate.swift in Sources */,
-				181EA10A1FE6B29C00D7C814 /* MoviesViewModel.swift in Sources */,
+				181EA10A1FE6B29C00D7C814 /* MoviesPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,7 +422,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G473WWFEN9;
-				INFOPLIST_FILE = "YTC Mobile Client/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ca.sharpmobile.ytsmoviesclient.YTC-Mobile-Client";
@@ -423,7 +439,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G473WWFEN9;
-				INFOPLIST_FILE = "YTC Mobile Client/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ca.sharpmobile.ytsmoviesclient.YTC-Mobile-Client";

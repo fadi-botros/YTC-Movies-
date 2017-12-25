@@ -10,23 +10,30 @@ import Foundation
 import Moya
 import SwiftyJSON
 
-protocol JustReloading {
-    func JustReloadTable()
-    func JustHide()
+// The delegate protocol has a naming convention by Apple, try to immitate that of UITableViewDelegate,
+//    UITextFieldDelegate, or any delegate
+// Made the delegate inherit AnyObject to be allowed to be used as "weak var"
+protocol MoviesPresenterDelegate: AnyObject {
+    func moviesPresenterJustReloadTable(_ moviesPresenter: MoviesPresenter)
+    func moviesPresenterJustHide(_ moviesPresenter: MoviesPresenter)
+    // This when an error happen, we need the error to present it if something happens
+    func moviesPresenter(_ moviesPresenter: MoviesPresenter, errorHappened error: Error?)
 }
 
-class MoviesViewModel: NSObject {
+// This is a presenter, not a ViewModel
+// The viewModel is just a group of observables
+// (In iOS/macOS Development you can use Key-Value Observation, so, use "@objc dynamic" before any
+//    variable you want it to be observable)
+
+class MoviesPresenter {
     
     
     //Mark: Variables
     var MoviesArray = [Movie]()
-    var delegate: JustReloading?
+    // Delegates must be weak referenced to avoid retain cycles
+    weak var delegate: MoviesPresenterDelegate?
     let provider = MoyaProvider<MyService>()
 
-    override init() {
-
-    }
-    
     /**
    This function requests movie list based on two parameters
      -Page
@@ -53,20 +60,19 @@ class MoviesViewModel: NSObject {
                     self.MoviesArray.append(movieObject)
                 }
                  if !movies.isEmpty {
-                self.delegate?.JustReloadTable()
+                self.delegate?.moviesPresenterJustReloadTable(self)
                  } else {
-                self.delegate?.JustHide()
+                self.delegate?.moviesPresenterJustHide(self)
             }
                 
             case let .failure(error):
-                print(error)
+                self.delegate?.moviesPresenter(self, errorHappened: error)
             }
         }
     }
     
     
-    // returns number of elements in movies array
-    
+    /// Returns: number of elements in movies array
     func numberOfRowsInSection() -> Int {
         return MoviesArray.count
     }
